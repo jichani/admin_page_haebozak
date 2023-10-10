@@ -121,13 +121,13 @@ class App extends Component {
   render() {
     const filteredComponents = (data) => {
       data = data.filter((c) => {
-        return c.name.indexOf(this.state.searchKeyword) > -1;
+        return c.user_name.indexOf(this.state.searchKeyword) > -1;
       });
       return data.map((c) => {
-        return <Customer stateRefresh={this.stateRefresh} key={c.id} id={c.id} image={c.image} name={c.name} birthday={c.birthday} gender={c.gender} job={c.job} />
+        return <Customer stateRefresh={this.stateRefresh} key={c.user_id} id={c.user_id} image={c.user_image} email={c.user_email} password={c.user_password} name={c.user_name} />
       })
     }
-    const cellList = ["설정", "프로필 이미지", "이름", "생년월일", "성별", "직업", "설정"];
+    const cellList = ["ID", "프로필 이미지", "이름", "이메일", "패스워드", "설정"];
     return (
       <Box sx={{
         width: '100%',

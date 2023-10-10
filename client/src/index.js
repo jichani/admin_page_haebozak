@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-import { ThemeProvider, createTheme } from '@mui/material/styles';  // 변경된 부분
+import { ThemeProvider, createTheme } from '@mui/material/styles';
 
 const theme = createTheme({
   typography: {

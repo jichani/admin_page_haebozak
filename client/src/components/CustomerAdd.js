@@ -18,9 +18,8 @@ class CustomerAdd extends React.Component {
     this.state = {
       file: null,
       username: '',
-      birthday: '',
-      gender: '',
-      job: '',
+      email: '',
+      psword: '',
       fileName: '',
       open: false
     };
@@ -36,9 +35,8 @@ class CustomerAdd extends React.Component {
     this.setState({
       file: null,
       username: '',
-      birthday: '',
-      gender: '',
-      job: '',
+      email: '',
+      psword: '',
       fileName: '',
       open: false
     })
@@ -61,10 +59,9 @@ class CustomerAdd extends React.Component {
     const url = '/api/customers';
     const formData = new FormData();
     formData.append('image', this.state.file);
-    formData.append('name', this.state.username);
-    formData.append('birthday', this.state.birthday);
-    formData.append('gender', this.state.gender);
-    formData.append('job', this.state.job);
+    formData.append('email', this.state.email);
+    formData.append('psword', this.state.psword);
+    formData.append('username', this.state.username);
 
     const config = {
       headers: {
@@ -85,9 +82,8 @@ class CustomerAdd extends React.Component {
     this.setState({
       file: null,
       username: '',
-      birthday: '',
-      gender: '',
-      job: '',
+      email: '',
+      psword: '',
       fileName: '',
       open: false
     })
@@ -109,10 +105,9 @@ class CustomerAdd extends React.Component {
               </Button>
             </label>
             <br />
+            <TextField label="이메일" type='email' name='email' value={this.state.email} onChange={this.handleValueChange} /><br />
+            <TextField label="패스워드" type='password' name='psword' value={this.state.psword} onChange={this.handleValueChange} /><br />
             <TextField label="이름" type='text' name='username' value={this.state.username} onChange={this.handleValueChange} /><br />
-            <TextField label="생년월일" type='text' name='birthday' value={this.state.birthday} onChange={this.handleValueChange} /><br />
-            <TextField label="성별" type='text' name='gender' value={this.state.gender} onChange={this.handleValueChange} /><br />
-            <TextField label="직업" type='text' name='job' value={this.state.job} onChange={this.handleValueChange} /><br />
           </DialogContent>
           <DialogActions>
             <Button variant='contained' color='primary' onClick={this.handleFormSubmit}>추가</Button>
