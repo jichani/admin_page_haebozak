@@ -105,9 +105,9 @@ class CustomerAdd extends React.Component {
               </Button>
             </label>
             <br />
+            <TextField label="이름" type='text' name='username' value={this.state.username} onChange={this.handleValueChange} /><br />
             <TextField label="이메일" type='email' name='email' value={this.state.email} onChange={this.handleValueChange} /><br />
             <TextField label="패스워드" type='password' name='psword' value={this.state.psword} onChange={this.handleValueChange} /><br />
-            <TextField label="이름" type='text' name='username' value={this.state.username} onChange={this.handleValueChange} /><br />
           </DialogContent>
           <DialogActions>
             <Button variant='contained' color='primary' onClick={this.handleFormSubmit}>추가</Button>
